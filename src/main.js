@@ -21,9 +21,9 @@ export default {
     tabBar: {
       list: [
         { pagePath: 'pages/info/main', text: '资讯', iconPath: 'static/images/info.png', selectedIconPath: 'static/images/info-selected.png' },
-        { pagePath: 'pages/videos/main', text: '视频' },
-        { pagePath: 'pages/community/main', text: '社区' },
-        { pagePath: 'pages/user/main', text: '我的' },
+        { pagePath: 'pages/videos/main', text: '视频', iconPath: 'static/images/videos.png', selectedIconPath: 'static/images/videos-selected.png' },
+        { pagePath: 'pages/community/main', text: '社区', iconPath: 'static/images/community.png', selectedIconPath: 'static/images/community-selected.png' },
+        { pagePath: 'pages/user/main', text: '我的', iconPath: 'static/images/user.png', selectedIconPath: 'static/images/user-selected.png' },
       ],
       backgroundColor: '#FFF',
       borderStyle: '#E8E8E8',

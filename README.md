@@ -1,21 +1,5 @@
-# 20180415
+# 开发记录
 
-> A Mpvue project
+### 20180507
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+项目中使用到的图片，只有放置在 `static` 目录下，才可以正常访问。[参考链接](https://github.com/Meituan-Dianping/mpvue/issues/94)
