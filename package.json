@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "mpvue": "^1.0.8",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
     "vuex": "^2.3.1"
   },
   "devDependencies": {

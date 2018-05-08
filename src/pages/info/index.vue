@@ -1,5 +1,5 @@
 <template>
-  <div class="Info" :style="{ marginTop: getSBH + 'px' }">Info</div>
+  <div class="Info" :style="{ marginTop: getSBH + 'px', height: 2 * getSBH + 'px' }">Info</div>
 </template>
 
 <script>
@@ -18,5 +18,6 @@ export default {
 
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import './Info.scss';
 </style>
