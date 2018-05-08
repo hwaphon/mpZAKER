@@ -41,6 +41,12 @@ export default {
         { icon: '/static/images/moring.png', text: '早报' },
         { icon: '/static/images/ball.png', text: '今日体坛' },
         { icon: '/static/images/message.png', text: '十说今日' },
+        { icon: '/static/images/star.png', text: '星八刻' },
+        { icon: '/static/images/phone.png', text: '新机速递' },
+        { icon: '/static/images/trophy.png', text: '赛果速递' },
+        { icon: '/static/images/movies.png', text: '影迷小宝鉴' },
+        { icon: '/static/images/cup.png', text: '下午茶' },
+        { icon: '/static/images/moon.png', text: '夜读' },
       ],
     };
   },
