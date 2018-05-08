@@ -3,5 +3,34 @@
   flex-flow: row nowrap;
   align-items: center;
   padding: 0 24rpx;
-  border-bottom: 1px solid #E8E8E8;
+  border-bottom: 2rpx solid #E8E8E8;
+  color: #303133;
+}
+
+.Info-top {
+  padding: 24rpx 24rpx 0;
+  border-bottom: 2rpx solid #E8E8E8;
+}
+
+.top-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-title {
+  font-size: 28rpx;
+}
+
+.top-href {
+  font-size: 20rpx;
+  color: #909399;
+}
+
+.top-card {
+  padding: 24rpx 0;
+  display: flex;
+  flex-flow: row nowrap;
+  overflow-x: scroll;
 }
