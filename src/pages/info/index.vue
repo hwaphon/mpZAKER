@@ -6,7 +6,7 @@
     <section class="Info-top">
       <div class="top-container">
         <p class="top-title">热门栏目</p>
-        <a href="#" class="top-href">查看全部</a>
+        <a href="/pages/subject/main" class="top-href">查看全部</a>
       </div>
       <div class="top-card">
         <Card v-for="(item, index) in topItems" :key="index" :icon="item.icon" :text="item.text"></Card>
