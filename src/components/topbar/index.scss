@@ -1,0 +1,17 @@
+.Topbar {
+  display: flex;
+  flex-flow: row nowrap;
+  padding-top: 16rpx;
+}
+
+.bar-item {
+  margin-right: 36rpx;
+  color: #303133;
+  font-size: 32rpx;
+  padding-bottom: 16rpx;
+}
+
+.bar-item-selected {
+  color: #F53438;
+  border-bottom: 6rpx solid;
+}
