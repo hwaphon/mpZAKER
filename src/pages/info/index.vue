@@ -16,16 +16,12 @@
 </template>
 
 <script>
-import store from '@/store';
 import Topbar from '@/components/topbar/index';
 import Card from '@/components/card/index';
+import mixins from '@/mixin/index';
 
 export default {
-  computed: {
-    getSBH() {
-      return store.getters.getSBH;
-    },
-  },
+  mixins: [mixins],
   components: {
     Topbar,
     Card,
