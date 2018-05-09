@@ -21,7 +21,7 @@ export default {
   },
   computed: {
     bgClass() {
-      const length = 4;
+      const length = 7;
       const index = Math.floor(Math.random() * length);
       return `card-img-bg-${index}`;
     },
