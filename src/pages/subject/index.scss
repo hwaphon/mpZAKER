@@ -7,3 +7,34 @@
   color: #303133;
   font-size: 32rpx;
 }
+
+.nav-back {
+  width: 36rpx;
+  height: 36rpx;
+  padding: 5rpx;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 16rpx;
+}
+
+.swiper-item {
+  width: 100%;
+  height: 360rpx;
+  position: relative;
+}
+
+.swiper-item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.swiper-item-title {
+  position: absolute;
+  z-index: 100;
+  bottom: 48rpx;
+  left: 24rpx;
+  font-size: 28rpx;
+  color: #FFF;
+}

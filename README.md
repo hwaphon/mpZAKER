@@ -37,3 +37,7 @@
         return `card-img-bg-${index}`;
       }
     }
+
+### 20180509
+
+所有页面的 `created` 方法都会在首页加载时触发，如果每个页面都有 `http` 请求时，这种机制就不是很合理了。虽然 `mpvue` 官方不推荐使用小程序自身的生命钩子方法，但是面对这种情况只能使用 `onLoad` 方法。[参考链接](https://github.com/Meituan-Dianping/mpvue/issues/405)
