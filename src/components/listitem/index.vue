@@ -1,5 +1,5 @@
 <template>
-  <div class="ListItem" :class="isRow">
+  <div class="ListItem" :class="isRow" @click="clickHandler">
     <div class="content-container">
       <p class="title">{{ title }}</p>
       <div class="other">
@@ -34,6 +34,11 @@ export default {
   computed: {
     isRow() {
       return this.imgs.length === 1 ? 'row' : 'column';
+    },
+  },
+  methods: {
+    clickHandler() {
+      this.$emit('click');
     },
   },
 };

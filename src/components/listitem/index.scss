@@ -1,8 +1,13 @@
 .ListItem {
-  padding: 36rpx 0;
-  margin: 0 24rpx;
+  padding: 36rpx 24rpx;
   border-bottom: 1rpx solid #E8E8E8;
   display: flex;
+  transition: all .2s;
+}
+
+.ListItem:hover {
+  background-color: #F2F6FC;
+  transition: all .2s;
 }
 
 .title {

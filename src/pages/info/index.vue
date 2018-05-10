@@ -1,20 +1,22 @@
 <template>
   <section class="Info">
-    <nav class="Info-nav" :style="{ marginTop: getSBH + 'px', height: 2 * getSBH + 'px' }">
-      <Topbar @click="changeTab"></Topbar>
-    </nav>
-    <section class="Info-top">
-      <div class="top-container">
-        <p class="top-title">热门栏目</p>
-        <a href="/pages/subject/main" class="top-href">查看全部</a>
-      </div>
-      <div class="top-card">
-        <Card v-for="(item, index) in topItems" :key="index" :icon="item.icon" :text="item.text"></Card>
-      </div>
-    </section>
-    <section class="Info-list">
-      <ListItem v-for="(item, index) in news" :key="index" :title="item.title" :author="item.author" :date="item.date" :imgs="item.imgs"></ListItem>
-    </section>
+    <scroll-view scroll-y class="scroll-view" :style="{ paddingTop: getSBH + 'px' }" scroll-with-animation lower-threshold="160" @scrolltolower="reachBottom">
+      <nav class="Info-nav" :style="{ top: getSBH + 'px', height: 2 * getSBH + 'px' }">
+        <Topbar @click="changeTab"></Topbar>
+      </nav>
+      <section class="Info-top" :style="{ marginTop: 2 * getSBH + 'px' }">
+        <div class="top-container">
+          <p class="top-title">热门栏目</p>
+          <a href="/pages/subject/main" class="top-href">查看全部</a>
+        </div>
+        <div class="top-card">
+          <Card v-for="(item, index) in topItems" :key="index" :icon="item.icon" :text="item.text"></Card>
+        </div>
+      </section>
+      <section class="Info-list">
+        <ListItem v-for="(item, index) in news" :key="index" :title="item.title" :author="item.author" :date="item.date" :imgs="item.imgs" @click="goNewsContent(item)"></ListItem>
+      </section>
+    </scroll-view>
   </section>
 </template>
 
@@ -37,6 +39,22 @@ export default {
     changeTab(index) {
       console.log(index);
     },
+    reachBottom() {
+      this.getNews();
+    },
+    getNews() {
+      httpGet(API.NEWS)
+        .then((res) => {
+          if (res.statusCode === 200) {
+            this.news = this.news.concat(res.data.data.list);
+          }
+        });
+    },
+    goNewsContent(obj) {
+      wx.navigateTo({
+        url: `/pages/article/main?title=${obj.title}&author=${obj.author}&date=${obj.date}`,
+      });
+    },
   },
   data() {
     return {
@@ -55,12 +73,7 @@ export default {
     };
   },
   onLoad() {
-    httpGet(API.NEWS)
-      .then((res) => {
-        if (res.statusCode === 200) {
-          this.news = res.data.data.list;
-        }
-      });
+    this.getNews();
   },
 };
 

@@ -5,6 +5,7 @@ export default {
   mounted() {
     wx.getSystemInfo({
       success(res) {
+        console.log(res);
         store.commit('setSBH', res.statusBarHeight);
       },
     });
@@ -13,4 +14,7 @@ export default {
 </script>
 
 <style>
+page {
+  height: 100%;
+}
 </style>

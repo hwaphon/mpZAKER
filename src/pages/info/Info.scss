@@ -1,15 +1,27 @@
+.Info {
+  height: 100%;
+  overflow: hidden;
+}
+
 .Info-nav {
   display: flex;
+  width: 100%;
   flex-flow: row nowrap;
   align-items: center;
   padding: 0 24rpx;
   border-bottom: 2rpx solid #E8E8E8;
   color: #303133;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  background-color: #FFF;
 }
 
 .Info-top {
   padding: 24rpx 24rpx 0;
   border-bottom: 2rpx solid #E8E8E8;
+  overflow: hidden;
 }
 
 .top-container {
@@ -34,4 +46,8 @@
   display: flex;
   flex-flow: row nowrap;
   overflow-x: scroll;
+}
+
+.scroll-view {
+  height: 100%;
 }

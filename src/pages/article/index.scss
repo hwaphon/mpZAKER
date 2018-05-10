@@ -1,0 +1,39 @@
+.Article-nav {
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 0 24rpx;
+  border-bottom: 2rpx solid #E8E8E8;
+  color: #303133;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  background-color: #FFF;
+}
+
+.nav-back {
+  width: 36rpx;
+  height: 36rpx;
+  padding: 5rpx;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 16rpx;
+}
+
+.Article-content {
+  padding: 36rpx 24rpx;
+}
+
+.title {
+  font-size: 42rpx;
+  display: block;
+  margin-bottom: 24rpx;
+}
+
+.author, .date {
+  font-size: 24rpx;
+  color: #909399;
+  margin-right: 24rpx;
+}

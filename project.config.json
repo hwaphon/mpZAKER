@@ -36,6 +36,12 @@
 					"name": "Subject",
 					"pathName": "pages/subject/main",
 					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "Article",
+					"pathName": "pages/article/main",
+					"query": ""
 				}
 			]
 		}
