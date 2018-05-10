@@ -1,3 +1,8 @@
+.Article {
+  height: 100%;
+  overflow: hidden;
+}
+
 .Article-nav {
   display: flex;
   width: 100%;
@@ -26,14 +31,31 @@
   padding: 36rpx 24rpx;
 }
 
+.Article-header {
+  margin-bottom: 32rpx;
+}
+
+.Article-p {
+  font-size: 32rpx;
+  margin-bottom: 28rpx;
+  color: #303133;
+  line-height: 1.5;
+  word-spacing: 24rpx;
+  text-indent: 2em;
+}
+
 .title {
   font-size: 42rpx;
   display: block;
-  margin-bottom: 24rpx;
+  margin-bottom: 16rpx;
 }
 
 .author, .date {
   font-size: 24rpx;
   color: #909399;
   margin-right: 24rpx;
+}
+
+.scroll-view {
+  height: 100%;
 }

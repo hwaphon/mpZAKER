@@ -5,11 +5,14 @@
         <img src="/static/images/back.png" alt="back icon" class="nav-back" @click="back">
       </nav>
       <article class="Article-content" :style="{ marginTop: 2 * getSBH + 'px' }"w>
-        <header>
+        <header class="Article-header">
           <h1 class="title">{{ query.title }}</h1>
           <span class="author">{{ query.author }}</span>
           <span class="date">{{ query.date }}</span>
         </header>
+        <block v-for="(item, index) in article" :key="index">
+          <p class="Article-p">{{ item.content }}</p>
+        </block>
       </article>
     </scroll-view>
   </section>
@@ -17,6 +20,8 @@
 
 <script>
 import mixins from '@/mixin/index';
+import { get as httpGet } from '@/utils/network';
+import API from '@/const/api';
 
 export default {
   mixins: [mixins],
@@ -27,10 +32,17 @@ export default {
   },
   onLoad() {
     this.query = this.$root.$mp.query || {};
+    httpGet(API.ARTICLE)
+      .then((res) => {
+        if (res.statusCode === 200) {
+          this.article = res.data.data.content;
+        }
+      });
   },
   data() {
     return {
       query: {},
+      article: [],
     };
   },
 };
