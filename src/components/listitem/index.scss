@@ -1,0 +1,43 @@
+.ListItem {
+  padding: 36rpx 0;
+  margin: 0 24rpx;
+  border-bottom: 1rpx solid #E8E8E8;
+  display: flex;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+.date, .author {
+  font-size: 24rpx;
+  color: #909399;
+  margin-right: 24rpx;
+}
+
+.banner {
+  width: 220rpx;
+  height: 144rpx;
+  border-radius: 8rpx;
+}
+
+.row {
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.column {
+  flex-flow: column;
+}
+
+.img-container-row {
+  margin-left: 24rpx;
+}
+
+.img-container-column {
+  margin-top: 24rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}

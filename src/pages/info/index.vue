@@ -12,19 +12,26 @@
         <Card v-for="(item, index) in topItems" :key="index" :icon="item.icon" :text="item.text"></Card>
       </div>
     </section>
+    <section class="Info-list">
+      <ListItem v-for="(item, index) in news" :key="index" :title="item.title" :author="item.author" :date="item.date" :imgs="item.imgs"></ListItem>
+    </section>
   </section>
 </template>
 
 <script>
 import Topbar from '@/components/topbar/index';
 import Card from '@/components/card/index';
+import ListItem from '@/components/listitem/index';
 import mixins from '@/mixin/index';
+import { get as httpGet } from '@/utils/network';
+import API from '@/const/api';
 
 export default {
   mixins: [mixins],
   components: {
     Topbar,
     Card,
+    ListItem,
   },
   methods: {
     changeTab(index) {
@@ -44,7 +51,16 @@ export default {
         { icon: '/static/images/cup.png', text: '下午茶' },
         { icon: '/static/images/moon.png', text: '夜读' },
       ],
+      news: [],
     };
+  },
+  onLoad() {
+    httpGet(API.NEWS)
+      .then((res) => {
+        if (res.statusCode === 200) {
+          this.news = res.data.data.list;
+        }
+      });
   },
 };
 
