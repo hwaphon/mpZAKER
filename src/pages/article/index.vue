@@ -14,6 +14,10 @@
           <p class="Article-p">{{ item.content }}</p>
         </block>
       </article>
+      <section class="recommend-list">
+        <span class="recommend-tag">精彩推荐</span>
+        <ListItem v-for="(item, index) in recommendArticles" :key="index" :title="item.title" :author="item.author" :imgs="item.imgs" @click="goNewsContent(item)"></ListItem>
+      </section>
     </scroll-view>
   </section>
 </template>
@@ -22,6 +26,7 @@
 import mixins from '@/mixin/index';
 import { get as httpGet } from '@/utils/network';
 import API from '@/const/api';
+import ListItem from '@/components/listitem/index';
 
 export default {
   mixins: [mixins],
@@ -29,13 +34,27 @@ export default {
     back() {
       wx.navigateBack();
     },
+    goNewsContent(obj) {
+      wx.navigateTo({
+        url: `/pages/article/main?title=${obj.title}&author=${obj.author}&date=${obj.date}`,
+      });
+    },
   },
   onLoad() {
     this.query = this.$root.$mp.query || {};
+    // 获取文章内容
     httpGet(API.ARTICLE)
       .then((res) => {
         if (res.statusCode === 200) {
           this.article = res.data.data.content;
+        }
+      });
+
+    // 获取推荐列表
+    httpGet(API.RECOMMEND)
+      .then((res) => {
+        if (res.statusCode === 200) {
+          this.recommendArticles = res.data.data.list;
         }
       });
   },
@@ -43,7 +62,11 @@ export default {
     return {
       query: {},
       article: [],
+      recommendArticles: [],
     };
+  },
+  components: {
+    ListItem,
   },
 };
 </script>

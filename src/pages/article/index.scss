@@ -59,3 +59,21 @@
 .scroll-view {
   height: 100%;
 }
+
+.recommend-list {
+  margin: 48rpx 0;
+  border-top: 1rpx solid #E8E8E8;
+  position: relative;
+}
+
+.recommend-tag {
+  display: inline-block;
+  color: #909399;
+  font-size: 20rpx;
+  position: absolute;
+  top: 0;
+  transform: translateY(-150%);
+  left: 24rpx;
+  background-color: #FFF;
+  z-index: 100;
+}

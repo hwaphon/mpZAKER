@@ -4,7 +4,7 @@
       <p class="title">{{ title }}</p>
       <div class="other">
         <span class="author">{{ author }}</span>
-        <span class="date">{{ date }}</span>
+        <span class="date" v-if="date">{{ date }}</span>
       </div>
     </div>
     <div class="img-container-row" v-if="imgs.length === 1">
