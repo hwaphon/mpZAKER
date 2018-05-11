@@ -1,3 +1,17 @@
+# 介绍
+
+本着试试 `mpvue` 的态度开发此程序，界面主要是模仿 `ZAKER` 新闻，数据全部是由 `Mock` 随机生成的，使用的是 [Easy-Mock](https://easy-mock.com/) 服务。本程序只开发了的几个页面，尝试了自定义组件，路由跳转及参数传递等功能。再开发下去只是组件的堆积和页面的拼装，所以停止了开发。几个页面的预览图如下所示：
+
+![image](http://p8jjkgbde.bkt.clouddn.com/css_sprites.png)
+
+# 安装
+
+    git clone https://github.com/hwaphon/mpZAKER.git
+    cd mpZAKER && yarn
+    yarn dev
+
+可以在自己喜欢的编译器中进行开发（Sublime，Atom 或其它），然后在微信开发工具中查看实时效果即可。
+
 # 开发记录
 
 ### 20180507
